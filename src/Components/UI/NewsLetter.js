@@ -1,11 +1,11 @@
 import React from "react";
-import newsLetter1 from "../../Assets/newsletter1.png";
-import newsLetter2 from "../../Assets/newsletter2.jpg";
+import newsLetter1 from "../../Assets/newsletter1.webp";
+import newsLetter2 from "../../Assets/newsletter2.webp";
 
 const NewsLetter = (props) => {
   return (
     <div
-      className={`overflow-hidden w-[100vw] h-full py-20 flex items-center flex-col md:flex-row bg-[#292D36] relative`}
+      className={`overflow-hidden w-full h-full py-20 flex items-center flex-col md:flex-row bg-[#292D36] relative`}
     >
       <div className="md:w-[70vw] w-[100vw] flex">
         {/* First Image */}

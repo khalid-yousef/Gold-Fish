@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Fragment, Suspense, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -27,11 +27,11 @@ function App() {
   }, [cartItems, totalAmount, totalPrice]);
 
   return (
-    <div>
+    <Fragment>
       <NavBar
         openMenuIndex="z-[300]"
         navbarIndex="z-[100]"
-        className="absolute top-0 left-0 w-[100vw]"
+        className="absolute top-0 left-0 w-full"
       />
       <CartButton />
 
@@ -62,8 +62,8 @@ function App() {
         </Routes>
       </Suspense>
 
-      <Footer className="fixed bottom-0 left-0 w-[100vw] md:h-[250px] h-[300px] -z-10" />
-    </div>
+      <Footer className="fixed bottom-0 left-0 -z-10" />
+    </Fragment>
   );
 }
 

@@ -1,4 +1,4 @@
-import profileImage from "../../../Assets/profile.jpg";
+import profileImage from "../../../Assets/profile.webp";
 
 export const testimonialsData = [
   {

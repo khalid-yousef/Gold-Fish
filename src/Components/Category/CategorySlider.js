@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import CategoryBigItem from "./CategoryBigItem";
 import CategorySmallItem from "./CategorySmallItem";
 import { allProducts } from "../UI/products-data";
-import errorImage from "../../Assets/404 Error Page not Found with people connecting a plug-amico.svg";
+import errorImage from "../../Assets/404 Error Page not Found with people connecting a plug-amico.webp";
 import CategoryLinks from "./CategoryLinks";
 
 const CategorySlider = (props) => {

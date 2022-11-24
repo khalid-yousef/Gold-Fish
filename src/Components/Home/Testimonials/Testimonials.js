@@ -57,14 +57,17 @@ const Testimonials = () => {
         ref={testimonialsRef}
         className="w-[100%] flex items-center justify-center gap-10"
       >
-        <Slider {...settings} className="w-[100%] p-5 absolute left-[50%] translate-x-[-50%]">
+        <Slider
+          {...settings}
+          className="w-[100%] p-5 absolute left-[50%] translate-x-[-50%]"
+        >
           {testimonialsData.map((item) => (
             <TestimonialsCard
-                key={item.id}
-                name={item.name}
-                desc={item.desc}
-                image={item.image}
-              />
+              key={item.id}
+              name={item.name}
+              desc={item.desc}
+              image={item.image}
+            />
           ))}
         </Slider>
       </motion.div>

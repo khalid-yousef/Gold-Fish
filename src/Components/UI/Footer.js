@@ -7,7 +7,7 @@ import { SiMastercard } from "react-icons/si";
 const Footer = (props) => {
   return (
     <div
-      className={`${props.className} bg-black flex flex-col items-center justify-center gap-5`}
+      className={`${props.className} md:h-[250px] h-[300px] w-[100%] bg-black flex flex-col items-center justify-center gap-5`}
     >
       {/* First Line */}
       <div className="w-full md:flex-row flex-col flex gap-4 items-center justify-between px-10">
@@ -23,7 +23,7 @@ const Footer = (props) => {
           Gold Fish
         </h1>
         {/* Navigation */}
-        <ul className="text-white text-md md:w-[40vw] w-full flex items-center justify-evenly ">
+        <ul className="text-white text-md md:w-[40%] w-full flex items-center justify-evenly ">
           <li>Home</li>
           <li>About Us</li>
           <li>Contact</li>
@@ -31,9 +31,9 @@ const Footer = (props) => {
         </ul>
 
         {/* Contact Us */}
-        <div className="md:w-[30vw] w-full text-white text-md flex items-center md:justify-end justify-center">
+        <div className="md:w-[30%] w-full text-white text-md flex items-center md:justify-end justify-center">
           <div className="mr-2 w-[30px] h-[30px] text-black bg-[#FDD69B] flex items-center justify-center rounded p-2">
-            <FiPhoneCall/>
+            <FiPhoneCall />
           </div>
           <h2>To Contact Us</h2>
         </div>

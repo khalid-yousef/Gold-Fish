@@ -57,7 +57,7 @@ const NavBar = (props) => {
       <motion.div
         initial={{ x: 0, opacity: 0 }}
         animate={navBarAnimation}
-        className={`flex flex-col items-start gap-10 fixed ${props.openMenuIndex} left-[-100vw] md:left-[-30%] top-0 w-[100vw] md:w-[30vw] h-[100vh] bg-[#25252d]`}
+        className={`flex flex-col items-start gap-10 fixed ${props.openMenuIndex} left-[-100%] md:left-[-30%] top-0 w-[100%] md:w-[30%] h-[100vh] bg-[#25252d]`}
       >
         <div
           onClick={closeNavBar}

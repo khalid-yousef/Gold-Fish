@@ -9,7 +9,7 @@ import Testimonials from "./Testimonials/Testimonials";
 const HomePageComponent = (props) => {
   return (
     <Fragment>
-      <StartPage className=" w-[100vw] h-[100vh]" />
+      <StartPage className=" w-full h-[100vh]" />
       <PopularProducts products={props.productsList} />
       <Category />
       <OurProduction allProducts={props.productsList} />

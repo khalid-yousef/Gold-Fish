@@ -11,7 +11,7 @@ const PopularProducts = (props) => {
   );
 
   return (
-    <div className="w-[100vw] h-full bg-[#292D36] p-20 flex flex-col gap-10">
+    <div className="w-full h-[100vh] bg-[#292D36] p-20 flex flex-col gap-10">
       {/* Header */}
       <div className="flex w-full items-center justify-center text-white text-3xl">
         <h1>Popular Dishes</h1>

@@ -1,15 +1,15 @@
-import p1 from "../../Assets/p1.jpg";
-import p2 from "../../Assets/p2.jpg";
-import p3 from "../../Assets/p3.jpg";
-import p4 from "../../Assets/p4.jpg";
-import p5 from "../../Assets/p5.jpg";
-import p6 from "../../Assets/p6.jpg";
-import p7 from "../../Assets/p7.jpg";
-import p8 from "../../Assets/p8.jpg";
-import p9 from "../../Assets/p9.jpg";
-import p10 from "../../Assets/p10.jpg";
-import p11 from "../../Assets/p11.jpg";
-import p12 from "../../Assets/p12.jpg";
+import p1 from "../../Assets/p1.webp";
+import p2 from "../../Assets/p2.webp";
+import p3 from "../../Assets/p3.webp";
+import p4 from "../../Assets/p4.webp";
+import p5 from "../../Assets/p5.webp";
+import p6 from "../../Assets/p6.webp";
+import p7 from "../../Assets/p7.webp";
+import p8 from "../../Assets/p8.webp";
+import p9 from "../../Assets/p9.webp";
+import p10 from "../../Assets/p10.webp";
+import p11 from "../../Assets/p11.webp";
+import p12 from "../../Assets/p12.webp";
 
 export const allProducts = [
   {

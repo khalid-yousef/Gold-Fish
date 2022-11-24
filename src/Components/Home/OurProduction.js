@@ -16,7 +16,7 @@ const OurProduction = (props) => {
     return product.id.slice(0, 2) === "su";
   });
 
-  const { animation: sushiAnimation } = useComponentAnimation(sushiRef, 0);
+  const { animation: sushiAnimation } = useComponentAnimation(sushiRef, 0.2);
 
   // Seafood Corner
   const seafoodRef = useRef();
@@ -25,7 +25,10 @@ const OurProduction = (props) => {
     return product.id.slice(0, 2) === "se";
   });
 
-  const { animation: seafoodAnimation } = useComponentAnimation(seafoodRef, 0);
+  const { animation: seafoodAnimation } = useComponentAnimation(
+    seafoodRef,
+    0.2
+  );
 
   // Salads Corner
   const saladsRef = useRef();
@@ -34,10 +37,10 @@ const OurProduction = (props) => {
     return product.id.slice(0, 2) === "sa";
   });
 
-  const { animation: saladsAnimation } = useComponentAnimation(saladsRef, 0);
+  const { animation: saladsAnimation } = useComponentAnimation(saladsRef, 0.2);
 
   return (
-    <div className="bg-[#292D36] w-[100vw] h-full p-20 flex flex-wrap flex-col gap-20 items-center justify-center">
+    <div className="bg-[#292D36] w-full h-full p-20 flex flex-wrap flex-col gap-20 items-center justify-center">
       {/* Sushi Category */}
       <motion.div
         ref={sushiRef}

@@ -1,23 +1,23 @@
 import TypewriterComponent from "typewriter-effect";
-import banner1 from "../../Assets/banner1.jpg";
-import banner2 from "../../Assets/banner2.jpg";
-import banner3 from "../../Assets/banner3.jpg";
+import banner1 from "../../Assets/banner1.webp";
+import banner2 from "../../Assets/banner2.webp";
+import banner3 from "../../Assets/banner3.webp";
 
 const StartPage = (props) => {
   return (
     <div className={`${props.className} p-0 m-0 bg-[#292D36]`}>
       {/* Background Image 1 */}
-      <div className={`hidden md:block md:w-[30vw] h-[100vh] relative`}>
-        <img className=" h-full" src={banner1} alt="" />
+      <div className={`hidden md:block md:w-[30%] h-[100vh] relative`}>
+        <img className="w-full h-full" src={banner1} alt="" />
       </div>
 
       {/* Background 2 */}
-      <div className=" hidden md:block md:absolute md:top-0 md:left-[30vw] md:w-[35vw] md:h-[100vh]">
+      <div className=" hidden md:block md:absolute md:top-0 md:left-[30%] md:w-[35%] md:h-[100vh]">
         <img className="w-full h-[100vh]" src={banner2} alt="" />
       </div>
 
       {/* Background3 */}
-      <div className=" absolute top-0 left-0 md:left-[65vw] w-[100vw] md:w-[35vw] h-[100vh]">
+      <div className=" absolute top-0 left-0 md:left-[65%] w-[100%] md:w-[35%] h-[100vh]">
         <img className="w-full h-[100vh]" src={banner3} alt="" />
       </div>
 
