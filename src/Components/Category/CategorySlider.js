@@ -6,14 +6,14 @@ import Slider from "react-slick";
 import CategoryBigItem from "./CategoryBigItem";
 import CategorySmallItem from "./CategorySmallItem";
 import { allProducts } from "../UI/products-data";
-import errorImage from "../../Assets/404 Error Page not Found with people connecting a plug-amico.webp";
+import errorImage from "../../Assets/error-image.svg";
 import CategoryLinks from "./CategoryLinks";
 
 const CategorySlider = (props) => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
 
-  const params = useParams();
+  const { categoryName } = useParams();
 
   const sushiProducts = allProducts.filter(
     (product) => product.id.slice(0, 2) === "su"
@@ -27,13 +27,13 @@ const CategorySlider = (props) => {
 
   let products = null;
 
-  if (params.categoryName === "sushi") {
+  if (categoryName === "sushi") {
     products = sushiProducts;
   }
-  if (params.categoryName === "seafood") {
+  if (categoryName === "seafood") {
     products = seafoodProducts;
   }
-  if (params.categoryName === "salads") {
+  if (categoryName === "salads") {
     products = saladsProducts;
   }
 
@@ -42,7 +42,7 @@ const CategorySlider = (props) => {
       <div className="flex gap-10 flex-col items-center justify-center w-[100vw] h-[100vh] bg-[#25252D] md:mb-[250px] mb-[300px]">
         <img src={errorImage} alt="" className="w-[28em]" />
         <Link
-          className="bg-[#FFDEA0] text-[#25252D] py-3 px-10 text-xl rounded-[20px] opacity-90 hover:scale-125 transition-all duration-300"
+          className="bg-[#FFDEA0] text-white py-3 px-10 text-xl rounded-[20px] opacity-90 hover:scale-125 transition-all duration-300"
           to="/home"
         >
           Home Page

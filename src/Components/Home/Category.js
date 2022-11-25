@@ -2,28 +2,24 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import useComponentAnimation from "../../hooks/use-component-animation";
 
 import bannerCategory1 from "../../Assets/bannerCategory1.webp";
 import bannerCategory2 from "../../Assets/bannerCategory2.webp";
 import bannerCategory3 from "../../Assets/p9.webp";
+import useComponentAnimation from "../../hooks/use-component-animation";
 
 const Category = () => {
   const firstCategoryRef = useRef();
-  const { animation: firstCategoryAnimation } = useComponentAnimation(
-    firstCategoryRef,
-    0.5
-  );
+  const { animation: firstCategoryAnimation } =
+    useComponentAnimation(firstCategoryRef);
+
   const secondCategoryRef = useRef();
-  const { animation: secondCategoryAnimation } = useComponentAnimation(
-    firstCategoryRef,
-    0.8
-  );
+  const { animation: secondCategoryAnimation } =
+    useComponentAnimation(firstCategoryRef);
+
   const thirdCategoryRef = useRef();
-  const { animation: thirdCategoryAnimation } = useComponentAnimation(
-    firstCategoryRef,
-    1
-  );
+  const { animation: thirdCategoryAnimation } =
+    useComponentAnimation(firstCategoryRef);
 
   const navigate = useNavigate();
 
@@ -41,7 +37,7 @@ const Category = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10 w-full h-[100vh] p-20 bg-[#181820] items-center justify-center">
+    <div className="flex flex-col gap-10 w-full h-full p-20 bg-[#181820] items-center justify-center">
       <div className="text-white text-3xl font-bold">
         <h1>Our Categories</h1>
       </div>
@@ -57,7 +53,7 @@ const Category = () => {
             className="cursor-pointer overflow-hidden relative md:w-[30vw] md:h-[200px]  "
           >
             <img
-              className="hover:scale-150 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
+              className="hover:scale-150 hover:rotate-6 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
               src={bannerCategory1}
               alt=""
             />
@@ -77,7 +73,7 @@ const Category = () => {
             className=" cursor-pointer relative overflow-hidden md:w-[30vw] md:h-[200px] "
           >
             <img
-              className="hover:scale-150 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
+              className="hover:scale-150 hover:rotate-6 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
               src={bannerCategory2}
               alt=""
             />
@@ -97,7 +93,7 @@ const Category = () => {
           className={` cursor-pointer overflow-hidden relative md:w-[30vw] md:h-[200px]`}
         >
           <img
-            className="hover:scale-150 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
+            className="hover:scale-150 hover:rotate-6 transition-all duration-500 w-[70vw] md:w-[30vw] md:h-[200px] rounded-[20px]"
             src={bannerCategory3}
             alt=""
           />

@@ -1,8 +1,9 @@
 import NotFoundComponent from "../Components/UI/NotFoundComponent";
 
-
 const PageNotFound = () => {
-  return <NotFoundComponent/>;
+  return (
+      <NotFoundComponent />
+  );
 };
 
 export default PageNotFound;

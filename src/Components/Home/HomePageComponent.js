@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import Category from "./Category";
 import NewsLetter from "../UI/NewsLetter";
 import OurProduction from "./OurProduction";
@@ -8,14 +7,14 @@ import Testimonials from "./Testimonials/Testimonials";
 
 const HomePageComponent = (props) => {
   return (
-    <Fragment>
+    <div className="w-full h-full">
       <StartPage className=" w-full h-[100vh]" />
       <PopularProducts products={props.productsList} />
       <Category />
       <OurProduction allProducts={props.productsList} />
       <NewsLetter />
       <Testimonials />
-    </Fragment>
+    </div>
   );
 };
 

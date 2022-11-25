@@ -52,8 +52,7 @@ const Testimonials = () => {
       <h1 className="text-5xl -mt-32 w-[90%] text-center text-white">
         Reviews
       </h1>
-      <motion.div
-        animate={animation}
+      <div
         ref={testimonialsRef}
         className="w-[100%] flex items-center justify-center gap-10"
       >
@@ -62,15 +61,16 @@ const Testimonials = () => {
           className="w-[100%] p-5 absolute left-[50%] translate-x-[-50%]"
         >
           {testimonialsData.map((item) => (
-            <TestimonialsCard
-              key={item.id}
-              name={item.name}
-              desc={item.desc}
-              image={item.image}
-            />
+            <motion.div key={item.id} animate={animation}>
+              <TestimonialsCard
+                name={item.name}
+                desc={item.desc}
+                image={item.image}
+              />
+            </motion.div>
           ))}
         </Slider>
-      </motion.div>
+      </div>
     </div>
   );
 };

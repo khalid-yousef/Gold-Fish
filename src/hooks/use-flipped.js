@@ -1,25 +1,25 @@
 import { useEffect } from "react";
 import { useAnimation, useInView } from "framer-motion";
 
-const useComponentAnimation = (ref, delaySec) => {
+const useFlipped = (ref) => {
   const componentIsInView = useInView(ref);
   const animation = useAnimation();
 
   useEffect(() => {
     if (componentIsInView) {
       animation.start({
-        scale: 1,
+        rotateY: 0,
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 1,
           type: "tween",
           ease: "linear",
         },
       });
     } else {
       animation.start({
-        scale: 0.6,
-        opacity: 0.5,
+        rotateY: 90,
+        opacity: 0,
         transition: {
           duration: 0,
           type: "tween",
@@ -27,8 +27,8 @@ const useComponentAnimation = (ref, delaySec) => {
         },
       });
     }
-  }, [componentIsInView, animation, delaySec]);
+  }, [componentIsInView, animation]);
   return { animation };
 };
 
-export default useComponentAnimation;
+export default useFlipped;

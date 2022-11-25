@@ -1,17 +1,14 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import useComponentAnimation from "../../hooks/use-component-animation";
 import PopularProductCard from "../UI/PopularProductCard";
+import useFlipped from "../../hooks/use-flipped";
 
 const PopularProducts = (props) => {
   const PopularRef = useRef();
-  const { animation: PopularAnimation } = useComponentAnimation(
-    PopularRef,
-    0
-  );
+  const { animation: PopularAnimation } = useFlipped(PopularRef, 0);
 
   return (
-    <div className="w-full h-[100vh] bg-[#292D36] p-20 flex flex-col gap-10">
+    <div className="w-full h-full bg-[#292D36] p-20 flex flex-col gap-10">
       {/* Header */}
       <div className="flex w-full items-center justify-center text-white text-3xl">
         <h1>Popular Dishes</h1>
