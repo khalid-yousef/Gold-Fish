@@ -39,7 +39,10 @@ const OurProduction = (props) => {
   return (
     <div className="bg-[#292D36] w-full h-full p-20 flex flex-wrap flex-col gap-20 items-center justify-center">
       {/* Sushi Category */}
-      <div className="w-full h-[150%] flex flex-col flex-wrap gap-10 items-center justify-center">
+      <div
+        ref={sushiRef}
+        className="w-full h-[150%] flex flex-col flex-wrap gap-10 items-center justify-center"
+      >
         <div className="flex flex-wrap w-full items-center justify-between text-white md:text-3xl text-2xl">
           <h1>Sushi Dishes</h1>
           <div>
@@ -54,11 +57,7 @@ const OurProduction = (props) => {
         </div>
         <div className="flex flex-wrap items-center gap-10 justify-center md:justify-between w-full">
           {sushiCategory.map((product, index) => (
-            <motion.div
-              key={product.id}
-              ref={sushiRef}
-              animate={sushiAnimation}
-            >
+            <motion.div key={product.id} animate={sushiAnimation}>
               <PopularProductCard
                 id={product.id}
                 image={product.image}
@@ -71,7 +70,10 @@ const OurProduction = (props) => {
       </div>
 
       {/* Seafood Category */}
-      <div className="w-full flex flex-col flex-wrap gap-10 items-center justify-center">
+      <div
+        ref={seafoodRef}
+        className="w-full flex flex-col flex-wrap gap-10 items-center justify-center"
+      >
         <div className="flex w-full items-center justify-between text-white md:text-3xl text-2xl">
           <h1>Seafood Dishes</h1>
           <div>
@@ -86,11 +88,7 @@ const OurProduction = (props) => {
         </div>
         <div className="flex flex-wrap items-center gap-10 justify-center md:justify-between w-full">
           {seafoodCategory.map((product) => (
-            <motion.div
-              key={product.id}
-              ref={seafoodRef}
-              animate={seafoodAnimation}
-            >
+            <motion.div key={product.id} animate={seafoodAnimation}>
               <PopularProductCard
                 id={product.id}
                 image={product.image}
@@ -103,7 +101,10 @@ const OurProduction = (props) => {
       </div>
 
       {/* Salads Category */}
-      <div className="w-full flex flex-col flex-wrap gap-10 items-center justify-center">
+      <div
+        ref={saladsRef}
+        className="w-full flex flex-col flex-wrap gap-10 items-center justify-center"
+      >
         <div className="flex w-full items-center justify-between text-white md:text-3xl text-2xl">
           <h1>Salads Dishes</h1>
           <div>
@@ -118,11 +119,7 @@ const OurProduction = (props) => {
         </div>
         <div className="flex flex-wrap items-center gap-10 justify-center md:justify-between w-full">
           {saladsCategory.map((product) => (
-            <motion.div
-              key={product.id}
-              ref={saladsRef}
-              animate={saladsAnimation}
-            >
+            <motion.div key={product.id} animate={saladsAnimation}>
               <PopularProductCard
                 id={product.id}
                 image={product.image}

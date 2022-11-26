@@ -23,7 +23,7 @@ const StartPage = (props) => {
 
       {/* Website Title */}
       <div
-        className={`w-[100%] p-7 flex flex-col items-center gap-5 absolute bottom-0 left-[50%] bg-black bg-opacity-50 rounded-t-[20px] translate-x-[-50%] `}
+        className={`w-[100%] p-7 flex flex-col items-center gap-5 absolute bottom-0 left-[50%] translate-x-[-50%] bg-black bg-opacity-30 rounded-t-[20px]  `}
       >
         <div className="">
           <h1 className="text-white font-bold text-6xl ">Gold Fish</h1>
@@ -35,6 +35,7 @@ const StartPage = (props) => {
               strings: [" Sushi", " Seafood", " Salads"],
               autoStart: true,
               loop: true,
+              deleteSpeed: 2,
               cursorClassName: "text-4xl text-[#ffdea0]",
               wrapperClassName: "text-[#ffdea0] font-bold text-4xl",
             }}
