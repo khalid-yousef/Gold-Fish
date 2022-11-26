@@ -18,3 +18,18 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: hsl(39, 100%, 81%);
 }
+
+.button-inactive {
+  padding: 0.5rem 1.7rem;
+  color: #fdd69b;
+  background-color: transparent;
+  border: 1px solid #fdd69b;
+  border-radius: 10px;
+}
+
+.button-active {
+  padding: 1rem 2rem;
+  color: #181820;
+  background-color: #fdd69b;
+  border-radius: 10px;
+}
