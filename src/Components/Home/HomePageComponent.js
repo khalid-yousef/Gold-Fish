@@ -1,10 +1,13 @@
-import Category from "./Category";
-import NewsLetter from "../UI/NewsLetter";
-import OurProduction from "./OurProduction";
-import PopularProducts from "./PopularProducts";
-import StartPage from "./StartPage";
-import Testimonials from "./Testimonials/Testimonials";
-import { AnimatePresence,motion } from "framer-motion";
+import React from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
+
+const StartPage = React.lazy(() => import("./StartPage"));
+const Category = React.lazy(() => import("./Category"));
+const OurProduction = React.lazy(() => import("./OurProduction"));
+const PopularProducts = React.lazy(() => import("./PopularProducts"));
+const Testimonials = React.lazy(() => import("./Testimonials/Testimonials"));
+const NewsLetter = React.lazy(() => import("../UI/NewsLetter"));
 
 const HomePageComponent = (props) => {
   return (
