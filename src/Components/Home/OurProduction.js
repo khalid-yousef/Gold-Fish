@@ -1,8 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
-
+import React, { useState, useEffect } from "react";
+import {
+  AnimatePresence,
+  domAnimation,
+  LazyMotion,
+  motion,
+} from "framer-motion";
 import PopularProductCard from "../UI/PopularProductCard";
-import useFlipped from "../../hooks/use-flipped";
 
 const OurProduction = (props) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -35,15 +38,9 @@ const OurProduction = (props) => {
     return product.id.slice(0, 2) === "sa";
   });
 
-  const myRef = useRef();
-  const { animation } = useFlipped(myRef, 0.2);
-
   return (
     <div className="bg-[#292D36] w-full h-full p-20 flex flex-wrap flex-col gap-20 items-center justify-center">
-      <div
-        ref={myRef}
-        className="w-full h-[150%] flex flex-col flex-wrap gap-10 items-center justify-center"
-      >
+      <div className="w-full h-[150%] flex flex-col flex-wrap gap-10 items-center justify-center">
         {/* AllProducts Button Filter */}
         <div className="flex flex-wrap w-full items-center justify-center gap-2 text-lg">
           <button
@@ -95,18 +92,33 @@ const OurProduction = (props) => {
         </div>
 
         {/* Products Map */}
-        <div className="flex flex-wrap items-center gap-10 justify-center md:justify-between w-full">
-          {filtered.map((product) => (
-            <motion.div key={product.id} animate={animation}>
-              <PopularProductCard
-                id={product.id}
-                image={product.image}
-                title={product.title}
-                price={product.price}
-              />
-            </motion.div>
-          ))}
-        </div>
+        <LazyMotion features={domAnimation}>
+          <motion.div
+            transition={{ duration: 0.5 }}
+            layout
+            className="flex flex-wrap items-center gap-10 justify-center w-full"
+          >
+            <AnimatePresence>
+              {filtered.map((product) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  key={product.id}
+                >
+                  <PopularProductCard
+                    id={product.id}
+                    image={product.image}
+                    title={product.title}
+                    price={product.price}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </LazyMotion>
       </div>
     </div>
   );

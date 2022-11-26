@@ -1,4 +1,3 @@
-import React from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { BsCartPlus } from "react-icons/bs";
 
@@ -20,12 +19,15 @@ const PopularProductCard = (props) => {
   };
 
   return (
-    <div className="relative bg-[#25252D] w-[210px] h-[250px] rounded-[10px] flex flex-col gap-3 items-center justify-start">
+    <div
+      className="relative bg-[#25252D] w-[210px] h-[250px] rounded-[10px] flex flex-col gap-3 items-center justify-start"
+    >
       <div className="w-[100%] h-[100px] flex items-center justify-center">
         <img
           className=" opacity-90 w-[80%] h-full rounded-b-[10px]"
           src={props.image}
           alt=""
+          loading="lazy"
         />
       </div>
 

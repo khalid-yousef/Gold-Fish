@@ -14,6 +14,7 @@ const useComponentAnimation = (ref, delaySec) => {
           duration: 0.5,
           type: "tween",
           ease: "linear",
+          delay: 0.2,
         },
       });
     } else {
