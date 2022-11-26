@@ -1,14 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import PopularProductCard from "../UI/PopularProductCard";
 import useFlipped from "../../hooks/use-flipped";
 
 const OurProduction = (props) => {
-  const [allProducts, setAllProducts] = useState(props.allProducts);
+  const [allProducts, setAllProducts] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [active, setActive] = useState({
+    sushi: false,
+    seafood: false,
+    salads: false,
+  });
 
-  const myRef = useRef();
-  const { animation } = useFlipped(myRef, 0.2);
+  const initialActiveState = { sushi: false, seafood: false, salads: false };
+  const ourProduction = props.allProducts;
+  useEffect(() => {
+    setAllProducts(ourProduction);
+    setFiltered(ourProduction);
+  }, [ourProduction]);
 
   // Sushi products
   const sushiCategory = props.allProducts.filter((product) => {
@@ -24,22 +34,25 @@ const OurProduction = (props) => {
   const saladsCategory = props.allProducts.filter((product) => {
     return product.id.slice(0, 2) === "sa";
   });
+
+  const myRef = useRef();
+  const { animation } = useFlipped(myRef, 0.2);
+
   return (
     <div className="bg-[#292D36] w-full h-full p-20 flex flex-wrap flex-col gap-20 items-center justify-center">
       <div
         ref={myRef}
         className="w-full h-[150%] flex flex-col flex-wrap gap-10 items-center justify-center"
       >
-        <div className="flex flex-wrap w-full items-center justify-evenly md:text-2xl text-xl">
-          {/* AllProducts Button Filter */}
+        {/* AllProducts Button Filter */}
+        <div className="flex flex-wrap w-full items-center justify-center gap-2 text-lg">
           <button
             onClick={() => {
-              setAllProducts(props.allProducts);
+              setFiltered(allProducts);
+              setActive(initialActiveState);
             }}
             className={`${
-              allProducts === props.allProducts
-                ? "button-active"
-                : "button-inactive"
+              filtered === allProducts ? "button-active" : "button-inactive"
             }`}
           >
             All Products
@@ -48,13 +61,10 @@ const OurProduction = (props) => {
           {/* Sushi Button Filter */}
           <button
             onClick={() => {
-              setAllProducts(sushiCategory);
+              setFiltered(sushiCategory);
+              setActive({ ...initialActiveState, sushi: true });
             }}
-            className={`${
-              allProducts === sushiCategory
-                ? "button-active"
-                : "button-inactive"
-            }`}
+            className={`${active.sushi ? "button-active" : "button-inactive"}`}
           >
             Sushi
           </button>
@@ -62,12 +72,11 @@ const OurProduction = (props) => {
           {/* Seafood Button Filter */}
           <button
             onClick={() => {
-              setAllProducts(seafoodCategory);
+              setFiltered(seafoodCategory);
+              setActive({ ...initialActiveState, seafood: true });
             }}
             className={`${
-              allProducts === seafoodCategory
-                ? "button-active"
-                : "button-inactive"
+              active.seafood ? "button-active" : "button-inactive"
             }`}
           >
             Seafood
@@ -76,19 +85,18 @@ const OurProduction = (props) => {
           {/* Salads Button Filter */}
           <button
             onClick={() => {
-              setAllProducts(saladsCategory);
+              setFiltered(saladsCategory);
+              setActive({ ...initialActiveState, salads: true });
             }}
-            className={`${
-              allProducts === saladsCategory
-                ? "button-active"
-                : "button-inactive"
-            }`}
+            className={`${active.salads ? "button-active" : "button-inactive"}`}
           >
             Salads
           </button>
         </div>
+
+        {/* Products Map */}
         <div className="flex flex-wrap items-center gap-10 justify-center md:justify-between w-full">
-          {allProducts.map((product) => (
+          {filtered.map((product) => (
             <motion.div key={product.id} animate={animation}>
               <PopularProductCard
                 id={product.id}
