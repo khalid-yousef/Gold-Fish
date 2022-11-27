@@ -1,16 +1,8 @@
-import React, { useRef } from "react";
 import { testimonialsData } from "./testimonials-data";
 import TestimonialsCard from "./TestimonialsCard";
-
 import Slider from "react-slick";
 
-import { motion } from "framer-motion";
-import useComponentAnimation from "../../../hooks/use-component-animation";
-
 const Testimonials = () => {
-  const testimonialsRef = useRef();
-  const { animation } = useComponentAnimation(testimonialsRef, 0.5);
-
   const settings = {
     arrows: false,
     dots: false,
@@ -53,7 +45,6 @@ const Testimonials = () => {
         Reviews
       </h1>
       <div
-        ref={testimonialsRef}
         className="w-[100%] flex items-center justify-center gap-10"
       >
         <Slider
@@ -61,13 +52,13 @@ const Testimonials = () => {
           className="w-[100%] p-5 absolute left-[50%] translate-x-[-50%]"
         >
           {testimonialsData.map((item) => (
-            <motion.div key={item.id} animate={animation}>
+            <div key={item.id}>
               <TestimonialsCard
                 name={item.name}
                 desc={item.desc}
                 image={item.image}
               />
-            </motion.div>
+            </div>
           ))}
         </Slider>
       </div>
